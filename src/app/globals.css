@@ -158,3 +158,8 @@ main {
   position: relative;
   z-index: 1;
 }
+
+/* Radial gradient utility */
+.bg-gradient-radial {
+  background: radial-gradient(circle, var(--tw-gradient-stops));
+}

@@ -28,7 +28,7 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              We're passionate about providing the highest quality cannabis products 
+              We&apos;re passionate about providing the highest quality cannabis products 
               with a commitment to safety, education, and customer satisfaction.
             </motion.p>
           </motion.div>
@@ -153,7 +153,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Community</h3>
               <p className="text-gray-600">
-                We're committed to building a positive cannabis community and 
+                We&apos;re committed to building a positive cannabis community and 
                 supporting local initiatives.
               </p>
             </div>

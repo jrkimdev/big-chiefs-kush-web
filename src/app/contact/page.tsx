@@ -31,7 +31,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               Have questions about our products or need assistance? 
-              We're here to help! Reach out to us through any of the methods below.
+              We&apos;re here to help! Reach out to us through any of the methods below.
             </motion.p>
           </motion.div>
         </div>
@@ -84,7 +84,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Email</h3>
                     <p className="text-gray-600">info@bigchiefskush.com</p>
-                    <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
+                    <p className="text-sm text-gray-500">We&apos;ll respond within 24 hours</p>
                   </div>
                 </div>
 
