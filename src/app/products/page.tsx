@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { ArrowRight, Star } from 'lucide-react'
+import Image from 'next/image'
 
 export default function ProductsPage() {
   const productCategories = [
@@ -95,9 +96,11 @@ export default function ProductsPage() {
               >
                 {/* Product Image */}
                 <div className="aspect-w-4 aspect-h-3 bg-gray-200">
-                  <img
+                  <Image
                     src={category.image}
                     alt={category.name}
+                    width={400}
+                    height={300}
                     className="w-full h-48 object-cover"
                   />
                 </div>
@@ -211,7 +214,7 @@ export default function ProductsPage() {
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Rare Strains</h3>
                 <p className="text-gray-600">
-                  Premium, exotic, and rare strains you won't find elsewhere
+                  Premium, exotic, and rare strains you won&apos;t find elsewhere
                 </p>
               </div>
             </div>

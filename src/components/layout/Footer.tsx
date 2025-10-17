@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { Leaf, Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react'
+import { Leaf, Mail, Phone, MapPin } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
