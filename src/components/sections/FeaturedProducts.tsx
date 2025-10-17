@@ -13,7 +13,6 @@ const FeaturedProducts = () => {
       id: '1',
       name: 'Purple Haze',
       category: 'Indica',
-      price: 45.00,
       rating: 4.8,
       reviews: 124,
       image: '/api/placeholder/300/300',
@@ -25,7 +24,6 @@ const FeaturedProducts = () => {
       id: '2',
       name: 'Blue Dream',
       category: 'Hybrid',
-      price: 42.00,
       rating: 4.9,
       reviews: 89,
       image: '/api/placeholder/300/300',
@@ -37,7 +35,6 @@ const FeaturedProducts = () => {
       id: '3',
       name: 'Green Crack',
       category: 'Sativa',
-      price: 48.00,
       rating: 4.7,
       reviews: 156,
       image: '/api/placeholder/300/300',
@@ -49,7 +46,6 @@ const FeaturedProducts = () => {
       id: '4',
       name: 'OG Kush',
       category: 'Indica',
-      price: 50.00,
       rating: 4.9,
       reviews: 203,
       image: '/api/placeholder/300/300',
@@ -155,16 +151,11 @@ const FeaturedProducts = () => {
                   </div>
                 </div>
 
-                {/* Price and Learn More */}
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-2xl font-bold text-gray-900">
-                      ${product.price.toFixed(2)}
-                    </span>
-                  </div>
+                {/* Learn More Button */}
+                <div className="flex justify-center">
                   <Button
                     size="sm"
-                    className="group"
+                    className="group w-full"
                   >
                     Learn More
                   </Button>

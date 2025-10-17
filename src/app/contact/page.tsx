@@ -30,9 +30,26 @@ export default function ContactPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Have questions about our products or need assistance? 
-              We&apos;re here to help! Reach out to us through any of the methods below.
+              Get in touch with Big Chiefs Kush. We&apos;re here to help with any questions 
+              about our products or locations.
             </motion.p>
+            
+            {/* Contact Info Quick Access */}
+            <motion.div 
+              className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center text-white"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <div className="flex items-center space-x-2">
+                <Phone className="h-5 w-5" />
+                <span className="text-lg font-medium">(816) 555-0123</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Mail className="h-5 w-5" />
+                <span className="text-lg font-medium">info@bigchiefskush.com</span>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -64,20 +81,20 @@ export default function ContactPage() {
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
                       <Phone className="h-6 w-6 text-white" />
                     </div>
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Phone</h3>
-                    <p className="text-gray-600">(555) 123-4567</p>
+                    <p className="text-gray-600">(816) 555-0123</p>
                     <p className="text-sm text-gray-500">Mon-Fri 9AM-6PM, Sat 10AM-4PM</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
                       <Mail className="h-6 w-6 text-white" />
                     </div>
                   </div>
@@ -90,22 +107,22 @@ export default function ContactPage() {
 
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
                       <MapPin className="h-6 w-6 text-white" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900">Address</h3>
-                    <p className="text-gray-600">
-                      123 Cannabis Street<br />
-                      Green City, GC 12345
-                    </p>
+                    <h3 className="text-lg font-semibold text-gray-900">Locations</h3>
+                    <div className="text-gray-600 space-y-1">
+                      <p><strong>Waldo:</strong> 123 Waldo Street, KC, MO 64111</p>
+                      <p><strong>Crossroads:</strong> 456 Crossroads Blvd, KC, MO 64108</p>
+                    </div>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center">
                       <Clock className="h-6 w-6 text-white" />
                     </div>
                   </div>
@@ -139,75 +156,30 @@ export default function ContactPage() {
               </motion.h3>
               
               <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                      First Name
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                      required
-                    />
-                  </div>
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    required
+                  />
                 </div>
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
+                    Email
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     required
                   />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
-                    required
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="product-inquiry">Product Inquiry</option>
-                    <option value="order-support">Order Support</option>
-                    <option value="general-question">General Question</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="other">Other</option>
-                  </select>
                 </div>
 
                 <div>
@@ -218,23 +190,10 @@ export default function ContactPage() {
                     id="message"
                     name="message"
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent"
                     placeholder="Tell us how we can help you..."
                     required
                   ></textarea>
-                </div>
-
-                <div className="flex items-center">
-                  <input
-                    id="age-verification"
-                    name="age-verification"
-                    type="checkbox"
-                    className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
-                    required
-                  />
-                  <label htmlFor="age-verification" className="ml-2 block text-sm text-gray-700">
-                    I confirm that I am 21 years of age or older
-                  </label>
                 </div>
 
                 <motion.div
@@ -251,56 +210,69 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* Social Media Links */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Follow Us</h2>
             <p className="text-xl text-gray-600">
-              Quick answers to common questions
+              Connect with us on social media for updates and community highlights
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Do you deliver to my area?
-              </h3>
-              <p className="text-gray-600">
-                We deliver to most areas within a 25-mile radius of our store. 
-                Contact us to confirm delivery availability in your area.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div 
+              className="bg-white p-8 shadow-lg border border-gray-200 text-center"
+              whileHover={{ scale: 1.05, y: -5 }}
+            >
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto mb-4 flex items-center justify-center">
+                <span className="text-white text-2xl">📷</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Instagram</h3>
+              <p className="text-gray-600 mb-4">Follow us for product highlights and KC events</p>
+              <Button className="w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white">
+                Follow @BigChiefsKush
+              </Button>
+            </motion.div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                What forms of payment do you accept?
-              </h3>
-              <p className="text-gray-600">
-                We accept cash, debit cards, and most major credit cards. 
-                Some restrictions may apply based on local regulations.
-              </p>
-            </div>
+            <motion.div 
+              className="bg-white p-8 shadow-lg border border-gray-200 text-center"
+              whileHover={{ scale: 1.05, y: -5 }}
+            >
+              <div className="w-16 h-16 bg-black mx-auto mb-4 flex items-center justify-center">
+                <span className="text-white text-2xl">🎵</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">TikTok</h3>
+              <p className="text-gray-600 mb-4">Short videos and behind-the-scenes content</p>
+              <Button className="w-full bg-black hover:bg-gray-800 text-white">
+                Follow @BigChiefsKush
+              </Button>
+            </motion.div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Do you offer age verification?
-              </h3>
-              <p className="text-gray-600">
-                Yes, we require valid government-issued ID showing you are 21 or older 
-                for all purchases and deliveries.
-              </p>
-            </div>
+            <motion.div 
+              className="bg-white p-8 shadow-lg border border-gray-200 text-center"
+              whileHover={{ scale: 1.05, y: -5 }}
+            >
+              <div className="w-16 h-16 bg-yellow-500 mx-auto mb-4 flex items-center justify-center">
+                <span className="text-white text-2xl">👻</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Snapchat</h3>
+              <p className="text-gray-600 mb-4">Daily stories and exclusive content</p>
+              <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-white">
+                Add @BigChiefsKush
+              </Button>
+            </motion.div>
+          </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Are your products lab-tested?
-              </h3>
-              <p className="text-gray-600">
-                Absolutely! All our products undergo rigorous third-party lab testing 
-                for potency, purity, and safety.
-              </p>
-            </div>
+          <div className="text-center mt-12">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white px-8 py-3">
+                📍 Get Directions
+              </Button>
+            </motion.div>
           </div>
         </div>
       </section>

@@ -62,8 +62,19 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              CANNABIS
+              Big Chiefs Kush
             </motion.h1>
+            <motion.h2 
+              className="text-2xl md:text-3xl lg:text-4xl font-semibold text-white mb-8"
+              style={{ 
+                textShadow: '1px 1px 3px rgba(0,0,0,0.8), 0 0 10px rgba(0,0,0,0.3)' 
+              }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              Home of the $4 Pre-Roll
+            </motion.h2>
             <motion.p 
               className="text-lg text-white mb-8 max-w-2xl leading-relaxed"
               style={{ 
@@ -73,8 +84,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              Premium cannabis products delivered with quality, safety, and satisfaction guaranteed. 
-              Discover our carefully curated selection of the finest cannabis products.
+              Locally owned micro-dispensary in KC bringing premium, exotic, and rare strains with top-tier quality you can see and smell in person.
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
@@ -82,17 +92,17 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}
             >
-              <Button size="lg" className="group bg-green-600 hover:bg-green-700 text-white px-8 py-4 text-lg font-semibold shadow-2xl">
-                Explore Products
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <Button size="lg" className="group bg-green-600 hover:bg-green-700 text-white px-16 py-8 text-lg font-semibold shadow-lg">
+                Visit Us – Waldo & Crossroads
+                <ArrowRight className="ml-4 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="lg" className="px-8 py-4 text-lg font-semibold border-2 border-white text-white hover:bg-white hover:text-green-600 bg-transparent shadow-2xl">
-                Learn More
+              <Button variant="outline" size="lg" className="px-16 py-8 text-lg font-semibold border-2 border-white text-white hover:bg-white hover:text-green-600 bg-transparent shadow-lg">
+                View Our Products
               </Button>
             </motion.div>
           </motion.div>
 
-          {/* Hero Image/Visual */}
+          {/* Hero Visual - Clean and Simple */}
           <motion.div 
             className="relative"
             initial={{ opacity: 0, x: 50 }}
@@ -100,76 +110,59 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <motion.div 
-              className="bg-white bg-opacity-95 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border-2 border-green-100"
-              whileHover={{ scale: 1.02 }}
+              className="bg-white bg-opacity-95 backdrop-blur-sm shadow-2xl p-8 border border-green-200 rounded-2xl"
+              whileHover={{ scale: 1.01 }}
               transition={{ type: "spring", stiffness: 300 }}
               style={{ 
                 boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.1)' 
               }}
             >
-              {/* Product Grid Layout */}
-              <div className="grid grid-cols-2 gap-6">
-                {/* Cannabis Buds */}
+              {/* Simple Product Showcase */}
+              <div className="text-center">
                 <motion.div 
-                  className="bg-green-50 rounded-2xl p-6 text-center"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.8 }}
+                  className="w-24 h-24 bg-green-600 mx-auto mb-6 flex items-center justify-center"
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8, type: "spring" }}
+                  whileHover={{ rotate: 360 }}
                 >
-                  <div className="w-16 h-16 bg-green-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-white text-2xl">🌿</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Premium Buds</h3>
-                  <p className="text-sm text-gray-600">High-quality cannabis flowers</p>
+                  <span className="text-white text-4xl">🌿</span>
                 </motion.div>
-
-                {/* CBD Oil */}
-                <motion.div 
-                  className="bg-green-50 rounded-2xl p-6 text-center"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                <motion.h3 
+                  className="text-2xl font-bold text-gray-900 mb-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1.0 }}
                 >
-                  <div className="w-16 h-16 bg-green-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-white text-2xl">💧</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">CBD Oil</h3>
-                  <p className="text-sm text-gray-600">Pure CBD extracts</p>
-                </motion.div>
-
-                {/* Edibles */}
-                <motion.div 
-                  className="bg-green-50 rounded-2xl p-6 text-center"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  Premium Cannabis
+                </motion.h3>
+                <motion.p 
+                  className="text-gray-600 mb-6"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, delay: 1.2 }}
                 >
-                  <div className="w-16 h-16 bg-green-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-white text-2xl">🍫</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Edibles</h3>
-                  <p className="text-sm text-gray-600">Delicious treats</p>
-                </motion.div>
-
-                {/* Concentrates */}
+                  Quality you can see and smell in person
+                </motion.p>
                 <motion.div 
-                  className="bg-green-50 rounded-2xl p-6 text-center"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  className="flex flex-col sm:flex-row gap-4 justify-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 1.4 }}
                 >
-                  <div className="w-16 h-16 bg-green-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                    <span className="text-white text-2xl">💎</span>
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Concentrates</h3>
-                  <p className="text-sm text-gray-600">High-potency extracts</p>
+                  <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white">
+                    View Products
+                  </Button>
+                  <Button variant="outline" size="sm" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
+                    Follow on Instagram
+                  </Button>
                 </motion.div>
               </div>
             </motion.div>
           </motion.div>
         </div>
 
-        {/* Features */}
+        {/* Features - Clean and Professional */}
         <motion.div 
           className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
           initial={{ opacity: 0, y: 50 }}
@@ -177,17 +170,17 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 1.6 }}
         >
           <motion.div 
-            className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-green-100 text-center"
+            className="bg-white bg-opacity-95 backdrop-blur-sm p-8 shadow-lg border border-green-200 text-center rounded-2xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.8 }}
-            whileHover={{ scale: 1.05, y: -5 }}
+            whileHover={{ scale: 1.02, y: -2 }}
             style={{ 
               boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1)' 
             }}
           >
             <motion.div 
-              className="bg-green-600 text-white p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center"
+              className="bg-green-600 text-white p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center"
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.6 }}
             >
@@ -197,17 +190,17 @@ const Hero = () => {
             <p className="text-gray-600">All products are rigorously tested for quality and safety</p>
           </motion.div>
           <motion.div 
-            className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-green-100 text-center"
+            className="bg-white bg-opacity-95 backdrop-blur-sm p-8 shadow-lg border border-green-200 text-center rounded-2xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 2.0 }}
-            whileHover={{ scale: 1.05, y: -5 }}
+            whileHover={{ scale: 1.02, y: -2 }}
             style={{ 
               boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1)' 
             }}
           >
             <motion.div 
-              className="bg-green-600 text-white p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center"
+              className="bg-green-600 text-white p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center"
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.6 }}
             >
@@ -217,17 +210,17 @@ const Hero = () => {
             <p className="text-gray-600">Quick and discreet delivery to your doorstep</p>
           </motion.div>
           <motion.div 
-            className="bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-green-100 text-center"
+            className="bg-white bg-opacity-95 backdrop-blur-sm p-8 shadow-lg border border-green-200 text-center rounded-2xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 2.2 }}
-            whileHover={{ scale: 1.05, y: -5 }}
+            whileHover={{ scale: 1.02, y: -2 }}
             style={{ 
               boxShadow: '0 20px 40px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.1)' 
             }}
           >
             <motion.div 
-              className="bg-green-600 text-white p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center"
+              className="bg-green-600 text-white p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center"
               whileHover={{ rotate: 360 }}
               transition={{ duration: 0.6 }}
             >

@@ -28,14 +28,14 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              We&apos;re passionate about providing the highest quality cannabis products 
-              with a commitment to safety, education, and customer satisfaction.
+              Locally owned micro-dispensary in KC bringing premium, exotic, and rare strains 
+              with top-tier quality you can see and smell in person.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
-      {/* Mission Section */}
+      {/* Our Story Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
@@ -55,7 +55,7 @@ export default function AboutPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.0 }}
               >
-                Our Mission
+                Our Story
               </motion.h2>
               <motion.p 
                 className="text-lg text-gray-600 mb-6"
@@ -63,9 +63,9 @@ export default function AboutPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.2 }}
               >
-                At Big Chiefs Kush, we believe in the power of premium cannabis to enhance 
-                wellness and quality of life. Our mission is to provide safe, high-quality 
-                products while educating our customers about responsible consumption.
+                Born and raised in Kansas City, we started Big Chiefs Kush with a simple mission: 
+                bring the highest quality cannabis products to our community. Our story is rooted 
+                in KC pride and a deep understanding of what our customers truly want.
               </motion.p>
               <motion.p 
                 className="text-lg text-gray-600"
@@ -73,25 +73,25 @@ export default function AboutPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.4 }}
               >
-                We work directly with trusted cultivators and manufacturers to ensure 
-                every product meets our strict standards for quality, purity, and potency.
+                We&apos;re not just another dispensary – we&apos;re your neighbors, your friends, 
+                and your trusted source for premium cannabis in Kansas City.
               </motion.p>
             </motion.div>
             <motion.div 
-              className="bg-green-100 rounded-2xl p-8 text-center"
+              className="bg-green-100 p-8 text-center"
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 1.0 }}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.02 }}
             >
               <motion.div 
-                className="w-24 h-24 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4"
+                className="w-24 h-24 bg-green-600 flex items-center justify-center mx-auto mb-4"
                 initial={{ scale: 0, rotate: -180 }}
                 animate={{ scale: 1, rotate: 0 }}
                 transition={{ duration: 0.8, delay: 1.2, type: "spring" }}
                 whileHover={{ rotate: 360 }}
               >
-                <span className="text-white text-3xl">🌿</span>
+                <span className="text-white text-3xl">🏠</span>
               </motion.div>
               <motion.h3 
                 className="text-2xl font-bold text-gray-900 mb-2"
@@ -99,7 +99,7 @@ export default function AboutPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.4 }}
               >
-                Quality First
+                KC Proud
               </motion.h3>
               <motion.p 
                 className="text-gray-600"
@@ -107,101 +107,101 @@ export default function AboutPage() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: 1.6 }}
               >
-                Every product is lab-tested and verified for safety and potency
+                Locally owned and operated with authentic Kansas City pride
               </motion.p>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* What Makes Us Different Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Values</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">What Makes Us Different</h2>
             <p className="text-xl text-gray-600">
-              The principles that guide everything we do
+              Premium strains, loyalty program, and authentic KC shop experience
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 text-center shadow-lg">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl">🛡️</span>
+            <div className="bg-white p-8 text-center shadow-lg border border-gray-200">
+              <div className="w-16 h-16 bg-green-600 flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-2xl">🌿</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Safety First</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Premium Strains</h3>
               <p className="text-gray-600">
-                All products undergo rigorous testing to ensure they meet the highest 
-                safety standards and regulatory requirements.
+                We carry premium, exotic, and rare strains that you can see and smell in person. 
+                Quality you can trust.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 text-center shadow-lg">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl">📚</span>
+            <div className="bg-white p-8 text-center shadow-lg border border-gray-200">
+              <div className="w-16 h-16 bg-green-600 flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-2xl">💎</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Education</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Loyalty Program</h3>
               <p className="text-gray-600">
-                We believe in educating our customers about cannabis, its effects, 
-                and responsible consumption practices.
+                Our loyalty program rewards our regular customers with exclusive deals, 
+                early access to new strains, and special promotions.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 text-center shadow-lg">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-2xl">🤝</span>
+            <div className="bg-white p-8 text-center shadow-lg border border-gray-200">
+              <div className="w-16 h-16 bg-green-600 flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-2xl">🏪</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Community</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Authentic KC Shop</h3>
               <p className="text-gray-600">
-                We&apos;re committed to building a positive cannabis community and 
-                supporting local initiatives.
+                We&apos;re not a chain – we&apos;re a locally owned micro-dispensary with 
+                authentic Kansas City culture and community focus.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Team Vibe Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Team Vibe</h2>
             <p className="text-xl text-gray-600">
-              Passionate professionals dedicated to your cannabis experience
+              A few lifestyle pics of the staff, events, and behind-the-scenes shots
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-32 h-32 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-4xl">👨‍💼</span>
+              <div className="w-32 h-32 bg-green-100 flex items-center justify-center mx-auto mb-4">
+                <span className="text-4xl">📸</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">John Smith</h3>
-              <p className="text-green-600 font-medium mb-2">Founder & CEO</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Staff Lifestyle</h3>
               <p className="text-gray-600">
-                Passionate about cannabis education and quality products
+                Behind-the-scenes shots of our team in action, 
+                showcasing our passion for cannabis culture
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-32 h-32 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-4xl">👩‍🔬</span>
+              <div className="w-32 h-32 bg-green-100 flex items-center justify-center mx-auto mb-4">
+                <span className="text-4xl">🎉</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Dr. Sarah Johnson</h3>
-              <p className="text-green-600 font-medium mb-2">Head of Quality</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">KC Events</h3>
               <p className="text-gray-600">
-                Ensures all products meet our rigorous safety standards
+                Community collaborations and events where we connect 
+                with our Kansas City neighbors
               </p>
             </div>
 
             <div className="text-center">
-              <div className="w-32 h-32 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-4xl">👨‍💻</span>
+              <div className="w-32 h-32 bg-green-100 flex items-center justify-center mx-auto mb-4">
+                <span className="text-4xl">🏪</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Mike Chen</h3>
-              <p className="text-green-600 font-medium mb-2">Head of Operations</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Behind the Scenes</h3>
               <p className="text-gray-600">
-                Manages our supply chain and customer experience
+                Store walkthroughs and daily operations, 
+                showing the care we put into every product
               </p>
             </div>
           </div>
