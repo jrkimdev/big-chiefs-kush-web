@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { MapPin, Clock, Phone, Navigation } from 'lucide-react'
+import Image from 'next/image'
 
 export default function LocationsPage() {
   const locations = [
@@ -115,9 +116,11 @@ export default function LocationsPage() {
               >
                 {/* Storefront Image */}
                 <div className="aspect-w-16 aspect-h-9 bg-gray-200">
-                  <img
+                  <Image
                     src={location.image}
                     alt={`${location.name} storefront`}
+                    width={600}
+                    height={400}
                     className="w-full h-48 object-cover"
                   />
                 </div>

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { Instagram, Camera, Video } from 'lucide-react'
+import Image from 'next/image'
 
 export default function GalleryPage() {
   const galleryImages = [
@@ -86,9 +87,11 @@ export default function GalleryPage() {
                 whileHover={{ scale: 1.05 }}
               >
                 <div className="aspect-w-4 aspect-h-3 bg-gray-200 rounded-lg overflow-hidden">
-                  <img
+                  <Image
                     src={image.src}
                     alt={image.alt}
+                    width={400}
+                    height={300}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
