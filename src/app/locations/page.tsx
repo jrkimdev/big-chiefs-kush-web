@@ -10,12 +10,12 @@ export default function LocationsPage() {
     {
       id: 1,
       name: 'Waldo Location',
-      address: '123 Waldo Street, Kansas City, MO 64111',
-      phone: '(816) 555-0123',
+      address: '218 W 74th St, Kansas City, MO 64114',
+      phone: '(816) 888-1615',
       hours: {
-        weekdays: '9:00 AM - 6:00 PM',
-        saturday: '10:00 AM - 4:00 PM',
-        sunday: 'Closed'
+        weekdays: '10:00 AM - 12:00 AM',
+        saturday: '10:00 AM - 12:00 AM',
+        sunday: '10:00 AM - 12:00 AM'
       },
       image: '/api/placeholder/600/400',
       description: 'Our flagship location in the heart of Waldo, featuring our full product selection and expert staff.'
