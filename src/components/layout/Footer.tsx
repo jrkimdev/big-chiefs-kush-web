@@ -36,18 +36,18 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <Phone className="h-4 w-4" />
-                <span>(816) 555-0123</span>
+                <span>(816) 888-1615</span>
               </div>
               <div className="flex items-center space-x-2 text-sm text-gray-400">
                 <Mail className="h-4 w-4" />
                 <span>info@bigchiefskush.com</span>
               </div>
               <div className="text-sm text-gray-400">
-                <p><strong>Waldo:</strong> 123 Waldo Street, KC, MO 64111</p>
+                <p><strong>Waldo:</strong> 218 W 74th St, Kansas City, MO 64114</p>
                 <p><strong>Crossroads:</strong> 456 Crossroads Blvd, KC, MO 64108</p>
               </div>
               <div className="text-sm text-gray-400">
-                <p><strong>Hours:</strong> Mon-Fri 9AM-6PM, Sat 10AM-4PM</p>
+                <p><strong>Hours:</strong> 10AM-12AM Daily (7 Days a Week)</p>
               </div>
             </div>
           </div>
