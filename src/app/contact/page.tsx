@@ -114,8 +114,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Locations</h3>
                     <div className="text-gray-600 space-y-1">
-                      <p><strong>Waldo:</strong> 123 Waldo Street, KC, MO 64111</p>
-                      <p><strong>Crossroads:</strong> 456 Crossroads Blvd, KC, MO 64108</p>
+                      <p><strong>Waldo:</strong> 218 W 74th St, Kansas City, MO 64114</p>
+                      <p><strong>Crossroads:</strong> 527 Southwest Blvd, Kansas City, MO 64108</p>
                     </div>
                   </div>
                 </div>

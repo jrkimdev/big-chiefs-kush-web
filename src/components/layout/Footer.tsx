@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import { Leaf, Mail, Phone, MapPin } from 'lucide-react'
+import Image from 'next/image'
+import { Mail, Phone, MapPin } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
@@ -21,8 +22,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Section */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <Leaf className="h-8 w-8 text-green-400" />
+            <div className="flex items-center space-x-3 mb-4">
+              <Image
+                src="/logos/main-logo.png"
+                alt="Big Chiefs Kush"
+                width={120}
+                height={48}
+                className="h-8 w-auto"
+              />
               <span className="text-xl font-bold">Big Chiefs Kush</span>
             </div>
             <p className="text-gray-400 text-sm mb-4">
@@ -44,7 +51,7 @@ const Footer = () => {
               </div>
               <div className="text-sm text-gray-400">
                 <p><strong>Waldo:</strong> 218 W 74th St, Kansas City, MO 64114</p>
-                <p><strong>Crossroads:</strong> 456 Crossroads Blvd, KC, MO 64108</p>
+                <p><strong>Crossroads:</strong> 527 Southwest Blvd, Kansas City, MO 64108</p>
               </div>
               <div className="text-sm text-gray-400">
                 <p><strong>Hours:</strong> 10AM-12AM Daily (7 Days a Week)</p>
@@ -76,8 +83,8 @@ const Footer = () => {
             <div className="text-sm text-gray-400 mb-4">
               © {currentYear} Big Chiefs Kush. All rights reserved.
             </div>
-            <div className="text-xs text-gray-500">
-              <p>Must be 21+. Please consume responsibly.</p>
+            <div className="text-xs text-gray-500 mb-2">
+              <p className="font-medium">Must be 21+. Please consume responsibly.</p>
             </div>
           </div>
         </div>

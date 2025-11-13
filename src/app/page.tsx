@@ -1,11 +1,11 @@
 import Hero from '@/components/sections/Hero'
-import FeaturedProducts from '@/components/sections/FeaturedProducts'
+import Locations from '@/components/sections/Locations'
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <FeaturedProducts />
+      <Locations />
     </>
   )
 }

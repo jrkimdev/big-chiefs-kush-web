@@ -18,12 +18,13 @@ export default function LocationsPage() {
         sunday: '10:00 AM - 12:00 AM'
       },
       image: '/api/placeholder/600/400',
-      description: 'Our flagship location in the heart of Waldo, featuring our full product selection and expert staff.'
+      description: 'Our flagship location in the heart of Waldo, featuring our full product selection and expert staff.',
+      directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=218+W+74th+St,+Kansas+City,+MO+64114'
     },
     {
       id: 2,
       name: 'Crossroads Location',
-      address: '456 Crossroads Blvd, Kansas City, MO 64108',
+      address: '527 Southwest Blvd, Kansas City, MO 64108',
       phone: '(816) 555-0456',
       hours: {
         weekdays: '9:00 AM - 6:00 PM',
@@ -31,7 +32,8 @@ export default function LocationsPage() {
         sunday: 'Closed'
       },
       image: '/api/placeholder/600/400',
-      description: 'Located in the vibrant Crossroads Arts District, offering premium cannabis products in a modern setting.'
+      description: 'Located in the vibrant Crossroads Arts District, offering premium cannabis products in a modern setting.',
+      directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=527+Southwest+Blvd,+Kansas+City,+MO+64108'
     }
   ]
 
@@ -164,10 +166,17 @@ export default function LocationsPage() {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
-                      <Navigation className="mr-2 h-4 w-4" />
-                      Get Directions
-                    </Button>
+                    <a
+                      href={location.directionsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
+                        <Navigation className="mr-2 h-4 w-4" />
+                        Get Directions
+                      </Button>
+                    </a>
                   </motion.div>
                 </div>
               </motion.div>

@@ -6,9 +6,16 @@ import { Instagram, Camera, ZoomIn, X } from 'lucide-react'
 import Image from 'next/image'
 import { useState } from 'react'
 
+type ImagePair = {
+  id: number
+  front: { id: number; src: string; alt: string; category: string }
+  back: { id: number; src: string; alt: string; category: string }
+}
+
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
   const [imageFilter, setImageFilter] = useState<string>('all')
+  const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set())
 
   // Generate array of image paths from your public/images folder
   const galleryImages = [
@@ -19,6 +26,37 @@ export default function GalleryPage() {
       category: 'products'
     })),
   ]
+
+  // Group images into pairs
+  const imagePairs: ImagePair[] = []
+  for (let i = 0; i < galleryImages.length; i += 2) {
+    if (i + 1 < galleryImages.length) {
+      imagePairs.push({
+        id: Math.floor(i / 2) + 1,
+        front: galleryImages[i],
+        back: galleryImages[i + 1],
+      })
+    } else {
+      // If odd number of images, pair the last one with itself
+      imagePairs.push({
+        id: Math.floor(i / 2) + 1,
+        front: galleryImages[i],
+        back: galleryImages[i],
+      })
+    }
+  }
+
+  const handleMouseEnter = (pairId: number) => {
+    setFlippedCards((prev) => new Set(prev).add(pairId))
+  }
+
+  const handleMouseLeave = (pairId: number) => {
+    setFlippedCards((prev) => {
+      const newSet = new Set(prev)
+      newSet.delete(pairId)
+      return newSet
+    })
+  }
 
   const categories = [
     { id: 'all', name: 'All Photos', count: galleryImages.length },
@@ -99,45 +137,132 @@ export default function GalleryPage() {
           </motion.div>
 
           <motion.div 
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            {galleryImages.map((image, index) => (
-              <motion.div
-                key={image.id}
-                className="relative group cursor-pointer overflow-hidden rounded-xl shadow-md hover:shadow-2xl transition-all duration-300 bg-white"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: Math.min(index * 0.02, 1) }}
-                whileHover={{ y: -8 }}
-                onClick={() => setSelectedImage(image.id)}
-              >
-                <div className="relative w-full overflow-hidden bg-white">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={500}
-                    height={500}
-                    className="w-full h-auto object-contain group-hover:scale-105 transition-transform duration-500"
-                  />
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  
-                  {/* Zoom Icon */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <motion.div
-                      className="bg-white/90 backdrop-blur-sm p-4 rounded-full"
-                      initial={{ scale: 0 }}
-                      whileHover={{ scale: 1.1 }}
+            {imagePairs.map((pair, index) => {
+              const isFlipped = flippedCards.has(pair.id)
+              return (
+                <motion.div
+                  key={pair.id}
+                  className="relative w-full h-[400px]"
+                  style={{ perspective: '1000px' }}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: Math.min(index * 0.05, 1) }}
+                  onMouseEnter={() => handleMouseEnter(pair.id)}
+                  onMouseLeave={() => handleMouseLeave(pair.id)}
+                >
+                  {/* Flip Card Container */}
+                  <div
+                    className="relative w-full h-full cursor-pointer"
+                    style={{
+                      transformStyle: 'preserve-3d',
+                      transition: 'transform 0.6s',
+                      transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+                    }}
+                  >
+                    {/* Front of Card */}
+                    <div
+                      className="absolute inset-0 w-full h-full rounded-xl shadow-lg overflow-hidden bg-white"
+                      style={{
+                        backfaceVisibility: 'hidden',
+                        WebkitBackfaceVisibility: 'hidden',
+                        transform: 'rotateY(0deg)',
+                      }}
                     >
-                      <ZoomIn className="h-6 w-6 text-green-600" />
-                    </motion.div>
+                      <div className="relative w-full h-full group">
+                        <Image
+                          src={pair.front.src}
+                          alt={pair.front.alt}
+                          width={500}
+                          height={500}
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                        />
+                        {/* Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        
+                        {/* Zoom Icon */}
+                        <div 
+                          className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                        >
+                          <div
+                            className="pointer-events-auto"
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              setSelectedImage(pair.front.id)
+                            }}
+                          >
+                            <motion.div
+                              className="bg-white/90 backdrop-blur-sm p-4 rounded-full"
+                              initial={{ scale: 0 }}
+                              whileHover={{ scale: 1.1 }}
+                            >
+                              <ZoomIn className="h-6 w-6 text-green-600" />
+                            </motion.div>
+                          </div>
+                        </div>
+
+                        {/* Zoom Indicator */}
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <p className="text-white text-sm font-medium">Click to zoom</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Back of Card */}
+                    <div
+                      className="absolute inset-0 w-full h-full rounded-xl shadow-lg overflow-hidden bg-white"
+                      style={{
+                        backfaceVisibility: 'hidden',
+                        WebkitBackfaceVisibility: 'hidden',
+                        transform: 'rotateY(180deg)',
+                      }}
+                    >
+                      <div className="relative w-full h-full group">
+                        <Image
+                          src={pair.back.src}
+                          alt={pair.back.alt}
+                          width={500}
+                          height={500}
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                        />
+                        {/* Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        
+                        {/* Zoom Icon */}
+                        <div 
+                          className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                        >
+                          <div
+                            className="pointer-events-auto"
+                            onClick={(e) => {
+                              e.stopPropagation()
+                              setSelectedImage(pair.back.id)
+                            }}
+                          >
+                            <motion.div
+                              className="bg-white/90 backdrop-blur-sm p-4 rounded-full"
+                              initial={{ scale: 0 }}
+                              whileHover={{ scale: 1.1 }}
+                            >
+                              <ZoomIn className="h-6 w-6 text-green-600" />
+                            </motion.div>
+                          </div>
+                        </div>
+
+                        {/* Zoom Indicator */}
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <p className="text-white text-sm font-medium">Click to zoom</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              )
+            })}
           </motion.div>
         </div>
       </section>
